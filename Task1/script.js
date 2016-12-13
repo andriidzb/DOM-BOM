@@ -11,18 +11,18 @@ var fields = {
  },
 
  username: {
- 	type: 'text',
+  type: 'text',
   name: 'username'
  },
 
  date: {
- 	type: 'text',
+  type: 'text',
   name: 'date'
  },
 
  submitBut: {
- 	type: 'submit',
- 	value: 'Validate Me'
+  type: 'submit',
+  value: 'Validate Me'
  }
 }
 
@@ -31,16 +31,16 @@ addElements(fields);
 //validation of Age
 function validateAge() {
  if (!isNaN(form.elements[0].value) && form.elements[0].value !== "" && form.elements[0].value >= 0) {
- 	return true;
+  return true;
  } else {
- 	return false;
+  return false;
  }
 }
 
 //validation of UserName
 function validateUserName() {
- if (form.elements[1].value.indexOf("user_") == 0 && form.elements[1].value[5]) {
-	return true;
+ if (form.elements[1].value.indexOf("user_") == 0 && form.elements[1].value[5]) {  
+ 	return true;
  } else {
  	return false;
  }
@@ -77,7 +77,7 @@ function addElements(fields) {
   var newField = fields[elements];
   var key; 
   for (key in newField) {
-  	input.setAttribute(key, newField[key]);
+   input.setAttribute(key, newField[key]);
   }
   form.appendChild(input);
  }
