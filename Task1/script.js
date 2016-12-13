@@ -40,9 +40,9 @@ function validateAge() {
 //validation of UserName
 function validateUserName() {
  if (form.elements[1].value.indexOf("user_") == 0 && form.elements[1].value[5]) {  
- 	return true;
+  return true;
  } else {
- 	return false;
+  return false;
  }
 }
 
@@ -62,10 +62,10 @@ function validateDate() {
 //check result of validation
 function resulOfValidation() {
  if (validateAge() && validateUserName() && validateDate() ) {
- 	return true;
+  return true;
  } else {
  	alert("Your data is invalid. Age should contain only numbers, username should start from user_ and date should be dd/mm/yyyy");
- 	return false;
+  return false;
  }
 }
 
