@@ -7,17 +7,20 @@ form.setAttribute('onSubmit', 'return resulOfValidation()');
 var fields = {
  age: {
   type: 'text',
-  name: 'age'
+  name: 'age',
+  placeholder: 'Age'
  },
 
  username: {
   type: 'text',
-  name: 'username'
+  name: 'username',
+  placeholder: 'Name'
  },
 
  date: {
   type: 'text',
-  name: 'date'
+  name: 'date',
+  placeholder: 'Date'
  },
 
  submitBut: {
@@ -48,15 +51,13 @@ function validateUserName() {
 
 //validation of Date
 function validateDate() {
- var result;
- result = (!isNaN(form.elements[2].value.substr(0, 2)) && (form.elements[2].value.substr(0, 2) < 32 )) &&
- (form.elements[2].value.substr(2, 1) == "/") && 
- (!isNaN(form.elements[2].value.substr(3, 2)) && (form.elements[2].value.substr(3, 2) < 13)) && 
- (form.elements[2].value.substr(5, 1) == "/") && 
- (!isNaN(form.elements[2].value.substr(6, 4))) && 
- (form.elements[2].value.length == 10) && 
- (form.elements[2].value[0 || 1 || 3 || 4 || 6 || 7 || 8 ||9] !== " ");
- return result;
+	//^\d{2}[/]\d{2}[/]\d{4}$/
+ var result = /^(?:0[1-9]|[1-2]\d|3[01])[\\/](?:0[1-9]|1[0-2])[\\/](?:[1-2]\d{3})$/;
+   if (form.elements[2].value.match(result)) {    
+    return true;
+  } else {
+    return false;
+  }
 }
 
 //check result of validation
